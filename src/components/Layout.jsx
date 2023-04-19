@@ -21,7 +21,7 @@ export default function Layout({ initState }) {
         <script defer src="/app.js" />
         <script defer src="/vendor.js" />
         <link rel="icon" href="https://www.pinclipart.com/picdir/big/535-5359859_grocery-icon-png-clipart.png" />
-        <title>ASStore</title>
+        <title>Кулинарные рецепты</title>
       </head>
       <body className="bodycss">
         <div id="root">
