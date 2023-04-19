@@ -20,7 +20,7 @@ export default function Layout({ initState }) {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossOrigin="anonymous" />
         <script defer src="/app.js" />
         <script defer src="/vendor.js" />
-        <link rel="icon" href="https://top-fon.com/uploads/posts/2023-02/1675541431_top-fon-com-p-kartinki-dlya-prezentatsii-knigi-prozrachn-66.png" />
+        <link rel="icon" href="https://www.pinclipart.com/picdir/big/535-5359859_grocery-icon-png-clipart.png" />
         <title>ASStore</title>
       </head>
       <body className="bodycss">
