@@ -9,7 +9,7 @@ authRouter.post('/signup', async (req, res) => {
   const {
     name, email, avatar, password,
   } = req.body;
-  if (!(name && email && avatar && password))  res.sendStatus(400);
+  if (!(name && email && avatar && password)) res.sendStatus(400);
   const hashpass = await bcrypt.hash(password, 10);
   const [foundUser, created] = await User.findOrCreate({
     where: { email },
@@ -40,7 +40,7 @@ authRouter.post('/login', async (req, res) => {
 
 authRouter.get('/logout', (req, res) => {
   req.session.destroy();
-  res.clearCookie('students_sid');
+  res.clearCookie('user_id');
   res.sendStatus(200);
 });
 export default authRouter;

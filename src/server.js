@@ -11,12 +11,12 @@ import recipeRouter from './routes/recipeRouter';
 
 require('dotenv').config();
 
-const PORT = 3001;
+const PORT = 3000;
 const app = express();
 const FileStore = store(session);
 
 const sessionConfig = {
-  name: 'user_sid', // Имя куки для хранения id сессии. По умолчанию - connect.sid
+  name: 'user_id', // Имя куки для хранения id сессии. По умолчанию - connect.sid
   secret: process.env.SESSION_SECRET ?? 'test', // Секретное слово для шифрования, может быть любым
   resave: true, // Пересохранять ли куку при каждом запросе
   store: new FileStore(),

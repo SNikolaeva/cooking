@@ -8,7 +8,18 @@ import LoginPage from './Pages/LoginPage';
 import RecipePage from './Pages/RecipePage';
 
 export default function App({ user, allRecipe }) {
-  const [recipeState, setRecipeState] =useState(allRecipe)
+  const [recipeState, setRecipeState] = useState(allRecipe || []);
+  const submitHandler = async (e) => {
+    const formData = Object.fromEntries(new FormData(e.target));
+    try {
+      const response = await axios.post('/recipe', formData);
+      if (response.status === 200) {
+        setRecipeState((prev) => [...prev, response.data]);
+      }
+    } catch (error) {
+      console.log('Ошибка добавления рецепта!');
+    }
+  };
   return (
     <div className="container">
       <Navbar user={user} />
@@ -16,7 +27,7 @@ export default function App({ user, allRecipe }) {
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/recipe" element={<RecipePage setRecipeState={setRecipeState}/>} />
+        <Route path="/recipe" element={<RecipePage submitHandler={submitHandler} />} />
       </Routes>
     </div>
   );

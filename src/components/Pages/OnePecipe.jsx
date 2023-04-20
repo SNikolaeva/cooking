@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 
-export default function OneBookPage({}) {
+export default function OneBookPage() {
   return (
     <div className="mt-5 row rounded border border-body bg-body p-2 text-dark bg-opacity-75">
-      <div className="row g-0 bg-body-secondary position-relative">
+      {/* <div className="row g-0 bg-body-secondary position-relative">
         <div className="col-md-6 mb-md-0 p-md-0">
           <img src={oneBook.image} alt="Обложка книги" style={{ width: '50%' }} />
         </div>
@@ -37,7 +37,7 @@ export default function OneBookPage({}) {
           </p>
           <p className="fw-lighter text-start">Описание</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
