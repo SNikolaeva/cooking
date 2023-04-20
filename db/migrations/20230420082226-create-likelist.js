@@ -1,36 +1,41 @@
+'use strict';
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Recipes', {
+    await queryInterface.createTable('Likelists', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       user_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Users',
-          key: 'id',
+          model: "Users",
+          key: "id"
         },
       },
-      list: {
-        type: Sequelize.TEXT,
+      recipe_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Recipes",
+          key: "id"
+        },
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('NOW'),
+        defaultValue: Sequelize.fn("NOW"),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('NOW'),
-      },
+        defaultValue: Sequelize.fn("NOW"),
+      }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Recipes');
-  },
+    await queryInterface.dropTable('Likelists');
+  }
 };
