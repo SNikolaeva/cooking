@@ -35,13 +35,6 @@ export default function SignupPage() {
             </div>
           </div>
           <div className="form-floating mt-3">
-            <input type="text" name="avatar" className="form-control" id="imginput" />
-            <label htmlFor="floatingInput">Аватар</label>
-            <div id="avatarHelp" className="form-text text-center">
-              Ссылка на вашу фотографию
-            </div>
-          </div>
-          <div className="form-floating mt-3">
             <input type="password" name="password" className="form-control" id="floatingPassword" />
             <label htmlFor="floatingPassword">Пароль</label>
             <div id="passwordHelp" className="form-text text-center">

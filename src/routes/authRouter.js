@@ -7,13 +7,13 @@ const authRouter = express.Router();
 
 authRouter.post('/signup', async (req, res) => {
   const {
-    name, email, avatar, password,
+    name, email, password,
   } = req.body;
-  if (!(name && email && avatar && password)) res.sendStatus(400);
+  if (!(name && email && password)) res.sendStatus(400);
   const hashpass = await bcrypt.hash(password, 10);
   const [foundUser, created] = await User.findOrCreate({
     where: { email },
-    defaults: { name, avatar, hashpass },
+    defaults: { name, hashpass },
   });
   if (!created) return res.status(401).json({ message: 'Пользователь уже существует' });
   req.session.user = foundUser;
