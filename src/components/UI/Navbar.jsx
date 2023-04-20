@@ -46,11 +46,11 @@ export default function Navbar({ user }) {
           <ul className="navbar-nav my-2 navbar-nav-scroll">
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src='https://www.pngkey.com/png/detail/804-8049996_male-avatar-job.png' alt="avat" width="30" height="30" />
+                <img src="https://www.pngkey.com/png/detail/804-8049996_male-avatar-job.png" alt="avat" width="30" height="30" />
               </a>
               <ul className="dropdown-menu">
-              <li><a className="dropdown-item" href="/recipe">Добавить рецепт</a></li>
-                <li><a className="dropdown-item" href="/#">Избранное</a></li>
+                <li><a className="dropdown-item" href="/recipe">Добавить рецепт</a></li>
+                <li><a className="dropdown-item" href="/like">Избранное</a></li>
                 <li><hr className="dropdown-divider" /></li>
                 <li className="dropdown-item"><button type="button" className="nav-link" onClick={logoutHandler}>Выход</button></li>
               </ul>

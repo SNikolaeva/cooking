@@ -1,6 +1,7 @@
 import React from 'react';
+import OneCard from '../UI/OneCard';
 
-export default function HomePage() {
+export default function HomePage({ recipeState }) {
   return (
     <div className="m-1">
       <section className="py-5 text-center container">
@@ -17,10 +18,13 @@ export default function HomePage() {
 
       <div className="album py-5 mb-1 rounded border border-body bg-body p-2 text-dark bg-opacity-75">
         <div className="container">
-          <div className="row">
-            <div className="col">
-              HomePage
-            </div>
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {recipeState?.map((el) => (
+              <div className="col" key={el.id}>
+                <OneCard id={el.id} onerecipe={el} image={el.image} title={el.title} ingredients={el.ingredients} body={el.body} time={el.time} />
+              </div>
+            ))}
+
           </div>
         </div>
       </div>
