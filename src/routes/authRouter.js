@@ -5,19 +5,11 @@ import { User } from '../../db/models';
 
 const authRouter = express.Router();
 
-authRouter.get('/signup', (req, res) => {
-  res.render('Layout');
-});
-
-authRouter.get('/login', (req, res) => {
-  res.render('Layout');
-});
-
 authRouter.post('/signup', async (req, res) => {
   const {
     name, email, avatar, password,
   } = req.body;
-  if (!(name && email && avatar && password)) res.sendStatus(400);
+  if (!(name && email && avatar && password))  res.sendStatus(400);
   const hashpass = await bcrypt.hash(password, 10);
   const [foundUser, created] = await User.findOrCreate({
     where: { email },
