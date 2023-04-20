@@ -6,12 +6,11 @@ import path from 'path';
 import indexRouter from './routes/indexRouter';
 import jsxRender from './utils/jsxRender';
 import authRouter from './routes/authRouter';
-import { pathMiddleware } from './middlewares';
 import resLocals from './middlewares/resLocals';
 
 require('dotenv').config();
 
-const PORT = 3000;
+const PORT = 3001;
 const app = express();
 const FileStore = store(session);
 
@@ -36,7 +35,6 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(session(sessionConfig));
-app.use(pathMiddleware);
 app.use(resLocals);
 
 app.use('/', indexRouter);
