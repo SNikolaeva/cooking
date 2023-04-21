@@ -3,7 +3,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 export default function OneCard({
-  id, onerecipe, image, title, ingredients, body, time, recipeLike, setLikeState, user,
+  onerecipe, setLikeState, user,
 }) {
   const url = useLocation();
   console.log('onerecipe.id,-----------------',onerecipe.id)
@@ -17,20 +17,20 @@ export default function OneCard({
 
   return (
     <div className="card shadow-sm">
-      <a href={`/${id}`}>
+      <a href={`/${onerecipe.id}`}>
         <img
           className="bd-placeholder-img card-img-top"
           style={{ width: '100%', height: '225px' }}
-          src={image}
+          src={onerecipe.image}
           alt="Placeholder: Thumbnail"
           aria-label="Placeholder: Thumbnail"
           preserveAspectRatio="xMidYMid slice"
         />
       </a>
       <div className="card-body">
-        <h5>{title}</h5>
+        <h5>{onerecipe.title}</h5>
         <p className="card-text">
-          {body.slice(0, 100)}
+          {onerecipe.body.slice(0, 100)}
           ...
         </p>
         <div className="d-flex justify-content-between align-items-center">
@@ -41,12 +41,12 @@ export default function OneCard({
           </div>
           <small className="text-muted">
             Кол-во ингредиентов:
-            {ingredients.split(',').length}
+            {onerecipe.ingredients.split(',').length}
           </small>
           <small className="text-muted">
             Время готовки:
             {' '}
-            {time}
+            {onerecipe.time}
           </small>
         </div>
       </div>
