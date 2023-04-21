@@ -1,16 +1,18 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export default function OneCard({
   onerecipe, setLikeState, user,
 }) {
+  const [showInput, setShowInput] = useState(true);
   const url = useLocation();
-  console.log('onerecipe.id,-----------------',onerecipe.id)
   const likeHeandler = async () => {
     await axios.post('/like', { recipe_id: onerecipe.id, user_id: user?.id });
+    setShowInput(false);
+    alert('Добавлено в избранное');
   };
-  const deletHeandler = async () => {
+  const deletHeandler = async (id) => {
     await axios.delete(`/like/${id}`);
     setLikeState((prev) => prev.filter((el) => el.id !== onerecipe.id));
   };
@@ -36,8 +38,8 @@ export default function OneCard({
         <div className="d-flex justify-content-between align-items-center">
           <div className="btn-group">
             {url.pathname === '/like' ? (
-              <button onClick={deletHeandler} type="button" className="w-20 mb-3 btn btn-lg btn-outline-dark ">💔</button>
-            ) : (<button type="button" className="btn btn-sm btn-outline-secondary" onClick={likeHeandler}>💖</button>)}
+              <button onClick={() => deletHeandler(onerecipe.id)} type="button" className="w-20 mb-3 btn btn-lg btn-outline-dark ">💔</button>
+            ) : (showInput && <button type="button" className="btn btn-sm btn-outline-secondary" onClick={likeHeandler}>💖</button>)}
           </div>
           <small className="text-muted">
             Кол-во ингредиентов:

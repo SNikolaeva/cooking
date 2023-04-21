@@ -32,7 +32,7 @@ export default function App({
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/recipe" element={<RecipePage submitHandler={submitHandler} />} />
-        <Route path="/like" element={<LikePage recipeState={recipeState} user={user} />} />
+        <Route path="/like" element={<LikePage like={like} recipeState={recipeState} user={user} />} />
         <Route path="/recipe/:id" element={<OneRecipePage oneCook={oneCook} />} />
 
       </Routes>
