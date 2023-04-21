@@ -22,4 +22,10 @@ recipeRouter.post('/', isAuth, async (req, res) => {
   }
 });
 
+recipeRouter.get('/:id', isAuth, async (req, res) => {
+  const oneCook = await Recipe.findByPk(req.params.id);
+  const initstate = { oneCook };
+  res.render('Layout', initstate);
+});
+
 export default recipeRouter;

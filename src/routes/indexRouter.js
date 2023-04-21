@@ -18,9 +18,4 @@ indexRouter.get('/login', notAuth, (req, res) => {
   res.render('Layout');
 });
 
-indexRouter.get('/:id', isAuth, async (req, res) => {
-  const oneCook = await Recipe.findByPk(req.params.id);
-  const initstate = { oneCook };
-  res.render('Layout', initstate);
-});
 export default indexRouter;

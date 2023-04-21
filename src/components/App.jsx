@@ -33,7 +33,7 @@ export default function App({
         <Route path="/login" element={<LoginPage />} />
         <Route path="/recipe" element={<RecipePage submitHandler={submitHandler} />} />
         <Route path="/like" element={<LikePage recipeState={recipeState} user={user} />} />
-        <Route path="/:id" element={<OneRecipePage oneCook={oneCook} />} />
+        <Route path="/recipe/:id" element={<OneRecipePage oneCook={oneCook} />} />
 
       </Routes>
     </div>
