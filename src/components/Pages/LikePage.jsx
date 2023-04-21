@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import OneCard from '../UI/OneCard';
 
-export default function LikePage({ recipeState, user }) {
-  const [likeState, setLikeState] = useState(recipeState || []);
+export default function LikePage({ user, like }) {
+  const [likeState, setLikeState] = useState(like || []);
   return (
     <div className="row mt-5 mx-auto rounded">
 
