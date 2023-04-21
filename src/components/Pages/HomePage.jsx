@@ -32,11 +32,11 @@ export default function HomePage({ recipeState, user }) {
 
       <div className="album py-5  rounded border border-body bg-body p-2 text-dark bg-opacity-75">
         <select
-          className="form-select m-1"
+          className="form-select w-25 m-auto mt-1 align-items-start"
           value={sortState}
           onChange={(e) => setSortState(e.target.value)}
         >
-          <option value="default">По умолчанию</option>
+          <option value="default">Фильтр по умолчанию</option>
           <option value="descIngredients">
             По количеству ингредиентов (по убыванию)
           </option>
@@ -49,7 +49,7 @@ export default function HomePage({ recipeState, user }) {
           </option>
         </select>
         <div className="container">
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-1">
             {recipeState?.map((el) => (
               <div className="col" key={el.id}>
                 <OneCard onerecipe={el} user={user} />

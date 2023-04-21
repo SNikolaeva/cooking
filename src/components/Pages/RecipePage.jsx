@@ -5,7 +5,7 @@ export default function RecipePage({ submitHandler }) {
   return (
     <div className="text-center">
 
-      <div className="form-signin w-25 m-auto mt-5">
+      <div className="form-signin w-100 m-auto mt-5">
         <form className="rounded border border-body bg-body p-2 text-dark bg-opacity-75" onSubmit={submitHandler}>
 
           <h1 className="h3 mb-3 mt-3 fw-normal">Добавить рецепт:</h1>
@@ -24,11 +24,11 @@ export default function RecipePage({ submitHandler }) {
           </div>
           <div className="form-floating mt-3">
             <input type="text" name="time" className="form-control" id="timeInput" />
-            <label htmlFor="floatingInput">Время приготовления</label>
+            <label htmlFor="floatingInput">Время приготовления(в минутах)</label>
           </div>
           <div className="form-floating mt-3">
-            <input type="text" name="body" className="form-control" id="bodyInput" rows="12" cols="12" />
-            <label htmlFor="floatingInput">Текстовое описание</label>
+            <input type="text" name="body" className="form-control" id="bodyInput" />
+            <label htmlFor="floatingInput">Инструкция</label>
           </div>
           <button className="w-50 mt-5 btn btn-lg btn-outline-dark" type="submit">Добавить</button>
         </form>

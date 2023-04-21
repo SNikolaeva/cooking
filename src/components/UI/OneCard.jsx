@@ -49,6 +49,8 @@ export default function OneCard({
             Время готовки:
             {' '}
             {onerecipe.time}
+            {' '}
+            минут.
           </small>
         </div>
       </div>
