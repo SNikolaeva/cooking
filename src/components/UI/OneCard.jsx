@@ -17,7 +17,7 @@ export default function OneCard({
 
   return (
     <div className="card shadow-sm">
-      <a href={`/${onerecipe.id}`}>
+      <a href={`/recipe/${onerecipe.id}`}>
         <img
           className="bd-placeholder-img card-img-top"
           style={{ width: '100%', height: '225px' }}

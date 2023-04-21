@@ -5,7 +5,7 @@ import { Recipe, Likelist } from '../../db/models';
 const likeRouter = express.Router();
 
 likeRouter.get('/', isAuth, async (req, res) => {
-  console.log('req.session.user.id========', req.session.user.id);
+  // console.log('req.session.user.id========', req.session.user.id);
   const favorite = await Likelist.findAll({
     where: { user_id: req.session.user.id },
     include: Recipe,
